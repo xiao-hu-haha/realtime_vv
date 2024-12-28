@@ -1,0 +1,461 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 184016 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:390), pid=63244, tid=65900
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_91-b14) (build 1.8.0_91-b14)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.91-b14 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000002ad8a800):  JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=65900, stack(0x000000002be80000,0x000000002bf80000)]
+
+Stack: [0x000000002be80000,0x000000002bf80000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C2:  50995 8478   !   4       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::offer (124 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000002ba69800 JavaThread "flink-akka.actor.default-dispatcher-18" [_thread_blocked, id=52792, stack(0x0000000036cb0000,0x0000000036db0000)]
+  0x000000002ba66000 JavaThread "flink-akka.actor.default-dispatcher-17" [_thread_blocked, id=62412, stack(0x0000000034890000,0x0000000034990000)]
+  0x000000002ba6b000 JavaThread "flink-akka.actor.default-dispatcher-16" [_thread_blocked, id=59044, stack(0x0000000047340000,0x0000000047440000)]
+  0x000000002ba67800 JavaThread "Flink-DispatcherRestEndpoint-thread-4" daemon [_thread_blocked, id=61600, stack(0x00000000366b0000,0x00000000367b0000)]
+  0x000000002ba6c000 JavaThread "Flink-DispatcherRestEndpoint-thread-3" daemon [_thread_blocked, id=60476, stack(0x0000000047040000,0x0000000047140000)]
+  0x000000002ba5e000 JavaThread "Flink-DispatcherRestEndpoint-thread-2" daemon [_thread_blocked, id=58784, stack(0x000000003d250000,0x000000003d350000)]
+  0x000000002ba62800 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (7/20)#0" daemon [_thread_blocked, id=59472, stack(0x0000000046d20000,0x0000000046e20000)]
+  0x000000002ba62000 JavaThread "Source Data Fetcher for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (7/20)#0" [_thread_in_native, id=35008, stack(0x0000000046c20000,0x0000000046d20000)]
+  0x000000002ba61000 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (11/20)#0" daemon [_thread_blocked, id=62332, stack(0x0000000046920000,0x0000000046a20000)]
+  0x000000002ba60800 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (12/20)#0" daemon [_thread_blocked, id=63424, stack(0x0000000046820000,0x0000000046920000)]
+  0x000000002ba5f800 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (9/20)#0" daemon [_thread_blocked, id=58640, stack(0x0000000046720000,0x0000000046820000)]
+  0x000000002ba5f000 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (4/20)#0" daemon [_thread_blocked, id=62628, stack(0x0000000046520000,0x0000000046620000)]
+  0x0000000030e29800 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (8/20)#0" daemon [_thread_blocked, id=60740, stack(0x0000000046320000,0x0000000046420000)]
+  0x0000000030e2c800 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (16/20)#0" daemon [_thread_blocked, id=56824, stack(0x0000000045e20000,0x0000000045f20000)]
+  0x0000000030e2e800 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (14/20)#0" daemon [_thread_blocked, id=64632, stack(0x0000000045820000,0x0000000045920000)]
+  0x000000002b032000 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (5/20)#0" daemon [_thread_blocked, id=65868, stack(0x0000000045320000,0x0000000045420000)]
+  0x000000002b031000 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (3/20)#0" daemon [_thread_blocked, id=60980, stack(0x0000000045120000,0x0000000045220000)]
+  0x000000002b02f800 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (6/20)#0" daemon [_thread_blocked, id=50452, stack(0x0000000043ab0000,0x0000000043bb0000)]
+  0x000000002b032800 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (20/20)#0" daemon [_thread_blocked, id=54200, stack(0x00000000439b0000,0x0000000043ab0000)]
+  0x000000002b030800 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (2/20)#0" daemon [_thread_blocked, id=53244, stack(0x00000000438b0000,0x00000000439b0000)]
+  0x000000002b028000 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (17/20)#0" daemon [_thread_blocked, id=64356, stack(0x00000000437b0000,0x00000000438b0000)]
+  0x000000002b02f000 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (13/20)#0" daemon [_thread_blocked, id=65316, stack(0x00000000436b0000,0x00000000437b0000)]
+  0x000000002b027000 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (15/20)#0" daemon [_thread_blocked, id=65288, stack(0x00000000435b0000,0x00000000436b0000)]
+  0x000000002b02e000 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (10/20)#0" daemon [_thread_blocked, id=52556, stack(0x00000000434b0000,0x00000000435b0000)]
+  0x000000002b02c800 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (19/20)#0" daemon [_thread_blocked, id=52592, stack(0x00000000433b0000,0x00000000434b0000)]
+  0x000000002b025000 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (18/20)#0" daemon [_thread_blocked, id=57456, stack(0x0000000042230000,0x0000000042330000)]
+  0x000000002b02c000 JavaThread "System Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (1/20)#0" daemon [_thread_blocked, id=61136, stack(0x0000000042130000,0x0000000042230000)]
+  0x000000002b02d800 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (9/20)#0" daemon [_thread_blocked, id=59236, stack(0x0000000046620000,0x0000000046720000)]
+  0x000000002b025800 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (15/20)#0" daemon [_thread_blocked, id=13760, stack(0x0000000046420000,0x0000000046520000)]
+  0x000000002b026800 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (10/20)#0" daemon [_thread_blocked, id=65024, stack(0x0000000046220000,0x0000000046320000)]
+  0x000000002b02a800 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (5/20)#0" daemon [_thread_blocked, id=63280, stack(0x0000000045f20000,0x0000000046020000)]
+  0x000000002b02b000 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (12/20)#0" daemon [_thread_blocked, id=58704, stack(0x0000000045d20000,0x0000000045e20000)]
+  0x000000002b029800 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (4/20)#0" daemon [_thread_blocked, id=58360, stack(0x0000000045c20000,0x0000000045d20000)]
+  0x000000002b029000 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (17/20)#0" daemon [_thread_blocked, id=66424, stack(0x0000000045b20000,0x0000000045c20000)]
+  0x000000002b024000 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (6/20)#0" daemon [_thread_blocked, id=63364, stack(0x0000000045a20000,0x0000000045b20000)]
+  0x000000002b023800 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (18/20)#0" daemon [_thread_blocked, id=24764, stack(0x0000000045920000,0x0000000045a20000)]
+  0x0000000030e2d000 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (2/20)#0" daemon [_thread_blocked, id=57800, stack(0x0000000045720000,0x0000000045820000)]
+  0x0000000030e2b000 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (3/20)#0" daemon [_thread_blocked, id=65512, stack(0x0000000045620000,0x0000000045720000)]
+  0x0000000030e2a000 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (7/20)#0" daemon [_thread_blocked, id=59468, stack(0x0000000045520000,0x0000000045620000)]
+  0x0000000030e2e000 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (1/20)#0" daemon [_thread_blocked, id=65880, stack(0x0000000045420000,0x0000000045520000)]
+  0x0000000030e2b800 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (14/20)#0" daemon [_thread_blocked, id=50060, stack(0x0000000045220000,0x0000000045320000)]
+  0x0000000030e2f800 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (20/20)#0" daemon [_thread_blocked, id=61176, stack(0x0000000045020000,0x0000000045120000)]
+  0x0000000030e24000 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (8/20)#0" daemon [_thread_blocked, id=59780, stack(0x0000000044f20000,0x0000000045020000)]
+  0x0000000030e28800 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (13/20)#0" daemon [_thread_blocked, id=59996, stack(0x0000000044e20000,0x0000000044f20000)]
+  0x0000000030e23800 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (11/20)#0" daemon [_thread_blocked, id=66300, stack(0x0000000044d20000,0x0000000044e20000)]
+  0x0000000030e22000 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (19/20)#0" daemon [_thread_blocked, id=61152, stack(0x0000000044c20000,0x0000000044d20000)]
+  0x0000000030e21000 JavaThread "Time Trigger for Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (16/20)#0" daemon [_thread_blocked, id=40396, stack(0x0000000041050000,0x0000000041150000)]
+  0x0000000030e28000 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (20/20)#0" [_thread_blocked, id=63632, stack(0x0000000040950000,0x0000000040a50000)]
+  0x0000000030e25800 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (19/20)#0" [_thread_blocked, id=66516, stack(0x0000000040850000,0x0000000040950000)]
+  0x0000000030e20800 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (18/20)#0" [_thread_blocked, id=21120, stack(0x0000000040750000,0x0000000040850000)]
+  0x0000000030e25000 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (17/20)#0" [_thread_blocked, id=51908, stack(0x0000000040650000,0x0000000040750000)]
+  0x0000000030e27000 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (16/20)#0" [_thread_blocked, id=60048, stack(0x0000000040550000,0x0000000040650000)]
+  0x0000000030e22800 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (15/20)#0" [_thread_blocked, id=60764, stack(0x0000000040450000,0x0000000040550000)]
+  0x0000000030e26800 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (14/20)#0" [_thread_blocked, id=43728, stack(0x0000000040350000,0x0000000040450000)]
+  0x000000002afab800 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (13/20)#0" [_thread_blocked, id=54544, stack(0x0000000040250000,0x0000000040350000)]
+  0x000000002afaa000 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (12/20)#0" [_thread_blocked, id=53068, stack(0x0000000040150000,0x0000000040250000)]
+  0x000000002afa9000 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (11/20)#0" [_thread_blocked, id=62184, stack(0x0000000040050000,0x0000000040150000)]
+  0x000000002afa8800 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (10/20)#0" [_thread_blocked, id=45468, stack(0x000000003ff50000,0x0000000040050000)]
+  0x000000002afaa800 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (9/20)#0" [_thread_blocked, id=65220, stack(0x000000003fe50000,0x000000003ff50000)]
+  0x000000002afa7800 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (8/20)#0" [_thread_blocked, id=63320, stack(0x000000003fd50000,0x000000003fe50000)]
+  0x000000002afad000 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (7/20)#0" [_thread_blocked, id=64264, stack(0x000000003fc50000,0x000000003fd50000)]
+  0x000000002afa7000 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (6/20)#0" [_thread_blocked, id=66488, stack(0x000000003fb50000,0x000000003fc50000)]
+  0x000000002afac000 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (5/20)#0" [_thread_blocked, id=62200, stack(0x000000003fa50000,0x000000003fb50000)]
+  0x000000002af9f800 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (4/20)#0" [_thread_blocked, id=52528, stack(0x000000003f950000,0x000000003fa50000)]
+  0x000000002afa1800 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (3/20)#0" [_thread_blocked, id=53884, stack(0x000000003f850000,0x000000003f950000)]
+  0x000000002afa6000 JavaThread "CloseableReaperThread" daemon [_thread_blocked, id=65992, stack(0x000000003f750000,0x000000003f850000)]
+  0x000000002af9e800 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (2/20)#0" [_thread_blocked, id=59888, stack(0x000000003f650000,0x000000003f750000)]
+  0x000000002afa0000 JavaThread "Source: topic_db[1] -> Calc[2] -> ConstraintEnforcer[3] -> TableToDataSteam -> Sink: Print to Std. Out (1/20)#0" [_thread_blocked, id=57256, stack(0x000000003f550000,0x000000003f650000)]
+  0x000000002afa5800 JavaThread "jobmanager-future-thread-20" daemon [_thread_blocked, id=65892, stack(0x000000003f450000,0x000000003f550000)]
+  0x000000002af9e000 JavaThread "jobmanager-future-thread-19" daemon [_thread_blocked, id=40028, stack(0x000000003f350000,0x000000003f450000)]
+  0x000000002afa4800 JavaThread "jobmanager-future-thread-18" daemon [_thread_blocked, id=62896, stack(0x000000003f250000,0x000000003f350000)]
+  0x000000002afa1000 JavaThread "jobmanager-future-thread-17" daemon [_thread_blocked, id=56968, stack(0x000000003f150000,0x000000003f250000)]
+  0x000000002afa3000 JavaThread "jobmanager-future-thread-16" daemon [_thread_blocked, id=58884, stack(0x000000003f050000,0x000000003f150000)]
+  0x000000002afa2800 JavaThread "jobmanager-future-thread-15" daemon [_thread_blocked, id=66368, stack(0x000000003ef50000,0x000000003f050000)]
+  0x000000002afa4000 JavaThread "jobmanager-future-thread-14" daemon [_thread_blocked, id=62024, stack(0x000000003ee50000,0x000000003ef50000)]
+  0x000000002b43d000 JavaThread "jobmanager-future-thread-13" daemon [_thread_blocked, id=12480, stack(0x000000003ed50000,0x000000003ee50000)]
+  0x000000002b441800 JavaThread "jobmanager-future-thread-12" daemon [_thread_blocked, id=63368, stack(0x000000003ec50000,0x000000003ed50000)]
+  0x000000002b43f000 JavaThread "jobmanager-future-thread-11" daemon [_thread_blocked, id=57340, stack(0x000000003eb50000,0x000000003ec50000)]
+  0x000000002b43e800 JavaThread "jobmanager-future-thread-10" daemon [_thread_blocked, id=65348, stack(0x000000003ea50000,0x000000003eb50000)]
+  0x000000002b43d800 JavaThread "jobmanager-future-thread-9" daemon [_thread_blocked, id=60504, stack(0x000000003e950000,0x000000003ea50000)]
+  0x000000002b43a800 JavaThread "jobmanager-future-thread-8" daemon [_thread_blocked, id=57424, stack(0x000000003e850000,0x000000003e950000)]
+  0x000000002b440000 JavaThread "jobmanager-future-thread-7" daemon [_thread_blocked, id=62228, stack(0x000000003e750000,0x000000003e850000)]
+  0x000000002b43c000 JavaThread "jobmanager-future-thread-6" daemon [_thread_blocked, id=66088, stack(0x000000003e650000,0x000000003e750000)]
+  0x000000002b43b800 JavaThread "jobmanager-future-thread-5" daemon [_thread_blocked, id=63500, stack(0x000000003e550000,0x000000003e650000)]
+  0x000000002b440800 JavaThread "jobmanager-future-thread-4" daemon [_thread_blocked, id=65492, stack(0x000000003e450000,0x000000003e550000)]
+  0x000000002b433000 JavaThread "jobmanager-future-thread-3" daemon [_thread_blocked, id=65180, stack(0x000000003e350000,0x000000003e450000)]
+  0x000000002b437000 JavaThread "jobmanager-future-thread-2" daemon [_thread_blocked, id=55416, stack(0x000000003e250000,0x000000003e350000)]
+  0x000000002b436000 JavaThread "pool-1-thread-1" [_thread_blocked, id=51680, stack(0x000000003e150000,0x000000003e250000)]
+  0x000000002b435800 JavaThread "SourceCoordinator-Source: topic_db[1]-worker-thread-1" daemon [_thread_blocked, id=65636, stack(0x000000003dd50000,0x000000003de50000)]
+  0x000000002b43a000 JavaThread "kafka-admin-client-thread | Fri Dec 27 19:39:32 CST 2024-enumerator-admin-client" daemon [_thread_in_native, id=58744, stack(0x000000003dc50000,0x000000003dd50000)]
+  0x000000002b439000 JavaThread "jobmanager-future-thread-1" daemon [_thread_blocked, id=66272, stack(0x000000003db50000,0x000000003dc50000)]
+  0x000000002b434800 JavaThread "SourceCoordinator-Source: topic_db[1]" [_thread_blocked, id=64548, stack(0x000000003da50000,0x000000003db50000)]
+  0x000000002b432800 JavaThread "jobmanager_3-main-scheduler-thread-1" daemon [_thread_blocked, id=63296, stack(0x000000003d950000,0x000000003da50000)]
+  0x000000002b434000 JavaThread "jobmanager-io-thread-1" daemon [_thread_blocked, id=65468, stack(0x000000003d450000,0x000000003d550000)]
+  0x000000002b437800 JavaThread "taskmanager_0-main-scheduler-thread-1" daemon [_thread_blocked, id=61076, stack(0x000000003d350000,0x000000003d450000)]
+  0x0000000032af4000 JavaThread "ForkJoinPool.commonPool-worker-18" daemon [_thread_blocked, id=62336, stack(0x000000003d050000,0x000000003d150000)]
+  0x0000000032af8000 JavaThread "ForkJoinPool.commonPool-worker-11" daemon [_thread_blocked, id=63204, stack(0x000000003cf50000,0x000000003d050000)]
+  0x0000000032af3800 JavaThread "resourcemanager_1-main-scheduler-thread-1" daemon [_thread_blocked, id=66400, stack(0x000000003cc50000,0x000000003cd50000)]
+  0x0000000032af8800 JavaThread "mini-cluster-io-thread-4" daemon [_thread_blocked, id=59892, stack(0x000000003c950000,0x000000003ca50000)]
+  0x0000000032af5800 JavaThread "pool-2-thread-1" [_thread_blocked, id=61148, stack(0x000000003c850000,0x000000003c950000)]
+  0x0000000032af5000 JavaThread "mini-cluster-io-thread-3" daemon [_thread_blocked, id=64748, stack(0x000000003c750000,0x000000003c850000)]
+  0x0000000032af2800 JavaThread "mini-cluster-io-thread-2" daemon [_thread_blocked, id=58392, stack(0x000000003c650000,0x000000003c750000)]
+  0x0000000032af6800 JavaThread "Flink-DispatcherRestEndpoint-thread-1" daemon [_thread_blocked, id=55444, stack(0x000000003c550000,0x000000003c650000)]
+  0x0000000032aec000 JavaThread "mini-cluster-io-thread-1" daemon [_thread_blocked, id=64252, stack(0x000000003c450000,0x000000003c550000)]
+  0x0000000032af0800 JavaThread "flink-rest-server-netty-boss-thread-1" daemon [_thread_in_native, id=57620, stack(0x000000003c350000,0x000000003c450000)]
+  0x0000000032aef800 JavaThread "Flink-Metric-View-Updater-thread-1" daemon [_thread_blocked, id=40120, stack(0x000000003bc50000,0x000000003bd50000)]
+  0x0000000032af1000 JavaThread "IOManager reader thread #1" daemon [_thread_blocked, id=65428, stack(0x0000000037c10000,0x0000000037d10000)]
+  0x0000000032aef000 JavaThread "IOManager writer thread #1" daemon [_thread_blocked, id=61132, stack(0x0000000037b10000,0x0000000037c10000)]
+  0x0000000032aee000 JavaThread "Timer-2" daemon [_thread_blocked, id=57868, stack(0x0000000037a10000,0x0000000037b10000)]
+  0x0000000032aea800 JavaThread "Timer-1" daemon [_thread_blocked, id=59172, stack(0x0000000037910000,0x0000000037a10000)]
+  0x0000000032aec800 JavaThread "BLOB Server listener at 54839" daemon [_thread_in_native, id=60944, stack(0x00000000376b0000,0x00000000377b0000)]
+  0x0000000032aed800 JavaThread "Timer-0" daemon [_thread_blocked, id=59740, stack(0x00000000375b0000,0x00000000376b0000)]
+  0x0000000031080800 JavaThread "ForkJoinPool.commonPool-worker-25" daemon [_thread_blocked, id=61028, stack(0x00000000372b0000,0x00000000373b0000)]
+  0x000000003107f000 JavaThread "flink-metrics-akka.actor.supervisor-dispatcher-8" [_thread_blocked, id=59980, stack(0x00000000371b0000,0x00000000372b0000)]
+  0x0000000031086000 JavaThread "flink-metrics-7" [_thread_blocked, id=54912, stack(0x00000000370b0000,0x00000000371b0000)]
+  0x0000000031080000 JavaThread "flink-metrics-akka.actor.internal-dispatcher-6" [_thread_blocked, id=56336, stack(0x0000000036fb0000,0x00000000370b0000)]
+  0x0000000031085000 JavaThread "flink-metrics-akka.actor.internal-dispatcher-5" [_thread_blocked, id=57536, stack(0x0000000036eb0000,0x0000000036fb0000)]
+  0x0000000031083800 JavaThread "flink-metrics-akka.actor.internal-dispatcher-4" [_thread_blocked, id=60484, stack(0x0000000036db0000,0x0000000036eb0000)]
+  0x0000000031082000 JavaThread "flink-metrics-akka.actor.internal-dispatcher-2" [_thread_blocked, id=60840, stack(0x0000000036bb0000,0x0000000036cb0000)]
+  0x0000000031084800 JavaThread "flink-metrics-scheduler-1" [_thread_blocked, id=59448, stack(0x0000000036ab0000,0x0000000036bb0000)]
+  0x0000000031081800 JavaThread "flink-akka.actor.supervisor-dispatcher-7" [_thread_blocked, id=60480, stack(0x00000000369b0000,0x0000000036ab0000)]
+  0x000000002ed43000 JavaThread "flink-akka.actor.internal-dispatcher-5" [_thread_blocked, id=63840, stack(0x00000000365b0000,0x00000000366b0000)]
+  0x000000002ed42800 JavaThread "flink-akka.actor.internal-dispatcher-4" [_thread_blocked, id=65700, stack(0x00000000364b0000,0x00000000365b0000)]
+  0x00000000337f2000 JavaThread "flink-akka.actor.internal-dispatcher-3" [_thread_blocked, id=59536, stack(0x00000000363b0000,0x00000000364b0000)]
+  0x000000003288f000 JavaThread "flink-scheduler-1" [_thread_blocked, id=55872, stack(0x0000000034590000,0x0000000034690000)]
+  0x000000002af9d000 JavaThread "Service Thread" daemon [_thread_blocked, id=65172, stack(0x000000002ca80000,0x000000002cb80000)]
+  0x000000002ae04000 JavaThread "C1 CompilerThread11" daemon [_thread_blocked, id=63932, stack(0x000000002c880000,0x000000002c980000)]
+  0x000000002adf5800 JavaThread "C1 CompilerThread10" daemon [_thread_blocked, id=64792, stack(0x000000002c780000,0x000000002c880000)]
+  0x000000002adf4800 JavaThread "C1 CompilerThread9" daemon [_thread_blocked, id=53832, stack(0x000000002c680000,0x000000002c780000)]
+  0x000000002adf2000 JavaThread "C1 CompilerThread8" daemon [_thread_blocked, id=50148, stack(0x000000002c580000,0x000000002c680000)]
+  0x000000002adef000 JavaThread "C2 CompilerThread7" daemon [_thread_blocked, id=65200, stack(0x000000002c480000,0x000000002c580000)]
+  0x000000002adee800 JavaThread "C2 CompilerThread6" daemon [_thread_blocked, id=66540, stack(0x000000002c380000,0x000000002c480000)]
+  0x000000002aded800 JavaThread "C2 CompilerThread5" daemon [_thread_blocked, id=47024, stack(0x000000002c280000,0x000000002c380000)]
+  0x000000002ad8c800 JavaThread "C2 CompilerThread4" daemon [_thread_blocked, id=62164, stack(0x000000002c180000,0x000000002c280000)]
+  0x000000002ad8c000 JavaThread "C2 CompilerThread3" daemon [_thread_blocked, id=66548, stack(0x000000002c080000,0x000000002c180000)]
+  0x000000002ad8b000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=52536, stack(0x000000002bf80000,0x000000002c080000)]
+=>0x000000002ad8a800 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=65900, stack(0x000000002be80000,0x000000002bf80000)]
+  0x000000002ad85800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=64716, stack(0x000000002bd80000,0x000000002be80000)]
+  0x000000002ad84000 JavaThread "Monitor Ctrl-Break" daemon [_thread_in_native, id=62072, stack(0x000000002bc80000,0x000000002bd80000)]
+  0x00000000283f2000 JavaThread "Attach Listener" daemon [_thread_blocked, id=61116, stack(0x000000002a3b0000,0x000000002a4b0000)]
+  0x0000000028448800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=58020, stack(0x000000002a2b0000,0x000000002a3b0000)]
+  0x00000000283d9800 JavaThread "Finalizer" daemon [_thread_blocked, id=61184, stack(0x000000002a140000,0x000000002a240000)]
+  0x00000000267e4000 JavaThread "Reference Handler" daemon [_thread_blocked, id=57884, stack(0x000000002a040000,0x000000002a140000)]
+  0x000000000290d800 JavaThread "main" [_thread_blocked, id=40988, stack(0x0000000002e40000,0x0000000002f40000)]
+
+Other Threads:
+  0x00000000283b5800 VMThread [stack: 0x0000000029f40000,0x000000002a040000] [id=59968]
+  0x000000002afc0000 WatcherThread [stack: 0x000000002cb80000,0x000000002cc80000] [id=63160]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 275968K, used 48394K [0x0000000716c00000, 0x000000072c680000, 0x00000007c0000000)
+  eden space 249344K, 15% used [0x0000000716c00000,0x000000071921dac8,0x0000000725f80000)
+  from space 26624K, 35% used [0x0000000725f80000,0x00000007268a4f08,0x0000000727980000)
+  to   space 26624K, 0% used [0x000000072ac80000,0x000000072ac80000,0x000000072c680000)
+ ParOldGen       total 826880K, used 34548K [0x00000005c4400000, 0x00000005f6b80000, 0x0000000716c00000)
+  object space 826880K, 4% used [0x00000005c4400000,0x00000005c65bd0f8,0x00000005f6b80000)
+ Metaspace       used 95015K, capacity 103003K, committed 104140K, reserved 1138688K
+  class space    used 12809K, capacity 14198K, committed 14336K, reserved 1048576K
+
+Card table byte_map: [0x0000000012620000,0x0000000013600000] byte_map_base: 0x000000000f7fe000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000068562f70
+ Begin Bits: [0x0000000014fa0000, 0x000000001ce90000)
+ End Bits:   [0x000000001ce90000, 0x0000000024d80000)
+
+Polling page: 0x0000000001040000
+
+CodeCache: size=245760Kb used=25053Kb max_used=25183Kb free=220706Kb
+ bounds [0x0000000003260000, 0x0000000004b30000, 0x0000000012260000]
+ total_blobs=8215 nmethods=7378 adapters=745
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 48.888 Thread 0x000000002aded800 8474   !   4       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+Event: 48.891 Thread 0x000000002adef000 nmethod 8473 0x0000000003f0e590 code [0x0000000003f0e6e0, 0x0000000003f0e828]
+Event: 48.972 Thread 0x000000002aded800 nmethod 8474 0x0000000003b735d0 code [0x0000000003b73a00, 0x0000000003b76448]
+Event: 49.536 Thread 0x000000002ad85800 8475       4       java.util.concurrent.ThreadPoolExecutor::runStateAtLeast (11 bytes)
+Event: 49.536 Thread 0x000000002ad85800 nmethod 8475 0x0000000004586c90 code [0x0000000004586dc0, 0x0000000004586e18]
+Event: 50.602 Thread 0x000000002ad8c000 8476       4       java.util.concurrent.ThreadPoolExecutor$Worker::lock (6 bytes)
+Event: 50.650 Thread 0x000000002ad8c000 nmethod 8476 0x0000000003f0e1d0 code [0x0000000003f0e320, 0x0000000003f0e448]
+Event: 50.770 Thread 0x000000002ad8c800 8477       4       java.util.concurrent.ThreadPoolExecutor::ensurePrestart (41 bytes)
+Event: 50.772 Thread 0x000000002ad8c800 nmethod 8477 0x0000000003f0ded0 code [0x0000000003f0e020, 0x0000000003f0e0e8]
+Event: 50.973 Thread 0x000000002ad8a800 8478   !   4       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::offer (124 bytes)
+
+GC Heap History (10 events):
+Event: 4.866 GC heap before
+{Heap before GC invocations=9 (full 3):
+ PSYoungGen      total 183808K, used 162304K [0x0000000716c00000, 0x0000000726500000, 0x00000007c0000000)
+  eden space 162304K, 100% used [0x0000000716c00000,0x0000000720a80000,0x0000000720a80000)
+  from space 21504K, 0% used [0x0000000720a80000,0x0000000720a80000,0x0000000721f80000)
+  to   space 19968K, 0% used [0x0000000725180000,0x0000000725180000,0x0000000726500000)
+ ParOldGen       total 590336K, used 12277K [0x00000005c4400000, 0x00000005e8480000, 0x0000000716c00000)
+  object space 590336K, 2% used [0x00000005c4400000,0x00000005c4ffd698,0x00000005e8480000)
+ Metaspace       used 73710K, capacity 78498K, committed 78680K, reserved 1118208K
+  class space    used 10011K, capacity 10865K, committed 10880K, reserved 1048576K
+Event: 4.878 GC heap after
+Heap after GC invocations=9 (full 3):
+ PSYoungGen      total 221696K, used 18233K [0x0000000716c00000, 0x0000000726380000, 0x00000007c0000000)
+  eden space 203264K, 0% used [0x0000000716c00000,0x0000000716c00000,0x0000000723280000)
+  from space 18432K, 98% used [0x0000000725180000,0x000000072634e638,0x0000000726380000)
+  to   space 22016K, 0% used [0x0000000723880000,0x0000000723880000,0x0000000724e00000)
+ ParOldGen       total 590336K, used 12285K [0x00000005c4400000, 0x00000005e8480000, 0x0000000716c00000)
+  object space 590336K, 2% used [0x00000005c4400000,0x00000005c4fff698,0x00000005e8480000)
+ Metaspace       used 73710K, capacity 78498K, committed 78680K, reserved 1118208K
+  class space    used 10011K, capacity 10865K, committed 10880K, reserved 1048576K
+}
+Event: 5.937 GC heap before
+{Heap before GC invocations=10 (full 3):
+ PSYoungGen      total 221696K, used 221497K [0x0000000716c00000, 0x0000000726380000, 0x00000007c0000000)
+  eden space 203264K, 100% used [0x0000000716c00000,0x0000000723280000,0x0000000723280000)
+  from space 18432K, 98% used [0x0000000725180000,0x000000072634e638,0x0000000726380000)
+  to   space 22016K, 0% used [0x0000000723880000,0x0000000723880000,0x0000000724e00000)
+ ParOldGen       total 590336K, used 12285K [0x00000005c4400000, 0x00000005e8480000, 0x0000000716c00000)
+  object space 590336K, 2% used [0x00000005c4400000,0x00000005c4fff698,0x00000005e8480000)
+ Metaspace       used 84307K, capacity 90752K, committed 91096K, reserved 1128448K
+  class space    used 11606K, capacity 12708K, committed 12800K, reserved 1048576K
+Event: 5.946 GC heap after
+Heap after GC invocations=10 (full 3):
+ PSYoungGen      total 231424K, used 19100K [0x0000000716c00000, 0x0000000729080000, 0x00000007c0000000)
+  eden space 209408K, 0% used [0x0000000716c00000,0x0000000716c00000,0x0000000723880000)
+  from space 22016K, 86% used [0x0000000723880000,0x0000000724b27218,0x0000000724e00000)
+  to   space 23552K, 0% used [0x0000000727980000,0x0000000727980000,0x0000000729080000)
+ ParOldGen       total 590336K, used 12293K [0x00000005c4400000, 0x00000005e8480000, 0x0000000716c00000)
+  object space 590336K, 2% used [0x00000005c4400000,0x00000005c5001698,0x00000005e8480000)
+ Metaspace       used 84307K, capacity 90752K, committed 91096K, reserved 1128448K
+  class space    used 11606K, capacity 12708K, committed 12800K, reserved 1048576K
+}
+Event: 6.167 GC heap before
+{Heap before GC invocations=11 (full 3):
+ PSYoungGen      total 231424K, used 163497K [0x0000000716c00000, 0x0000000729080000, 0x00000007c0000000)
+  eden space 209408K, 68% used [0x0000000716c00000,0x000000071f9034c0,0x0000000723880000)
+  from space 22016K, 86% used [0x0000000723880000,0x0000000724b27218,0x0000000724e00000)
+  to   space 23552K, 0% used [0x0000000727980000,0x0000000727980000,0x0000000729080000)
+ ParOldGen       total 590336K, used 12293K [0x00000005c4400000, 0x00000005e8480000, 0x0000000716c00000)
+  object space 590336K, 2% used [0x00000005c4400000,0x00000005c5001698,0x00000005e8480000)
+ Metaspace       used 89574K, capacity 98351K, committed 98380K, reserved 1134592K
+  class space    used 12312K, capacity 13696K, committed 13696K, reserved 1048576K
+Event: 6.179 GC heap after
+Heap after GC invocations=11 (full 3):
+ PSYoungGen      total 272896K, used 23546K [0x0000000716c00000, 0x000000072bb80000, 0x00000007c0000000)
+  eden space 249344K, 0% used [0x0000000716c00000,0x0000000716c00000,0x0000000725f80000)
+  from space 23552K, 99% used [0x0000000727980000,0x000000072907e9a8,0x0000000729080000)
+  to   space 26624K, 0% used [0x0000000725f80000,0x0000000725f80000,0x0000000727980000)
+ ParOldGen       total 590336K, used 12325K [0x00000005c4400000, 0x00000005e8480000, 0x0000000716c00000)
+  object space 590336K, 2% used [0x00000005c4400000,0x00000005c5009698,0x00000005e8480000)
+ Metaspace       used 89574K, capacity 98351K, committed 98380K, reserved 1134592K
+  class space    used 12312K, capacity 13696K, committed 13696K, reserved 1048576K
+}
+Event: 6.179 GC heap before
+{Heap before GC invocations=12 (full 4):
+ PSYoungGen      total 272896K, used 23546K [0x0000000716c00000, 0x000000072bb80000, 0x00000007c0000000)
+  eden space 249344K, 0% used [0x0000000716c00000,0x0000000716c00000,0x0000000725f80000)
+  from space 23552K, 99% used [0x0000000727980000,0x000000072907e9a8,0x0000000729080000)
+  to   space 26624K, 0% used [0x0000000725f80000,0x0000000725f80000,0x0000000727980000)
+ ParOldGen       total 590336K, used 12325K [0x00000005c4400000, 0x00000005e8480000, 0x0000000716c00000)
+  object space 590336K, 2% used [0x00000005c4400000,0x00000005c5009698,0x00000005e8480000)
+ Metaspace       used 89574K, capacity 98351K, committed 98380K, reserved 1134592K
+  class space    used 12312K, capacity 13696K, committed 13696K, reserved 1048576K
+Event: 6.265 GC heap after
+Heap after GC invocations=12 (full 4):
+ PSYoungGen      total 272896K, used 0K [0x0000000716c00000, 0x000000072bb80000, 0x00000007c0000000)
+  eden space 249344K, 0% used [0x0000000716c00000,0x0000000716c00000,0x0000000725f80000)
+  from space 23552K, 0% used [0x0000000727980000,0x0000000727980000,0x0000000729080000)
+  to   space 26624K, 0% used [0x0000000725f80000,0x0000000725f80000,0x0000000727980000)
+ ParOldGen       total 826880K, used 34540K [0x00000005c4400000, 0x00000005f6b80000, 0x0000000716c00000)
+  object space 826880K, 4% used [0x00000005c4400000,0x00000005c65bb0f8,0x00000005f6b80000)
+ Metaspace       used 88472K, capacity 94989K, committed 98380K, reserved 1134592K
+  class space    used 11945K, capacity 13069K, committed 13696K, reserved 1048576K
+}
+Event: 6.932 GC heap before
+{Heap before GC invocations=13 (full 4):
+ PSYoungGen      total 272896K, used 249344K [0x0000000716c00000, 0x000000072bb80000, 0x00000007c0000000)
+  eden space 249344K, 100% used [0x0000000716c00000,0x0000000725f80000,0x0000000725f80000)
+  from space 23552K, 0% used [0x0000000727980000,0x0000000727980000,0x0000000729080000)
+  to   space 26624K, 0% used [0x0000000725f80000,0x0000000725f80000,0x0000000727980000)
+ ParOldGen       total 826880K, used 34540K [0x00000005c4400000, 0x00000005f6b80000, 0x0000000716c00000)
+  object space 826880K, 4% used [0x00000005c4400000,0x00000005c65bb0f8,0x00000005f6b80000)
+ Metaspace       used 94648K, capacity 102503K, committed 103756K, reserved 1138688K
+  class space    used 12771K, capacity 14118K, committed 14208K, reserved 1048576K
+Event: 6.938 GC heap after
+Heap after GC invocations=13 (full 4):
+ PSYoungGen      total 275968K, used 9363K [0x0000000716c00000, 0x000000072c680000, 0x00000007c0000000)
+  eden space 249344K, 0% used [0x0000000716c00000,0x0000000716c00000,0x0000000725f80000)
+  from space 26624K, 35% used [0x0000000725f80000,0x00000007268a4f08,0x0000000727980000)
+  to   space 26624K, 0% used [0x000000072ac80000,0x000000072ac80000,0x000000072c680000)
+ ParOldGen       total 826880K, used 34548K [0x00000005c4400000, 0x00000005f6b80000, 0x0000000716c00000)
+  object space 826880K, 4% used [0x00000005c4400000,0x00000005c65bd0f8,0x00000005f6b80000)
+ Metaspace       used 94648K, capacity 102503K, committed 103756K, reserved 1138688K
+  class space    used 12771K, capacity 14118K, committed 14208K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 7.531 Thread 0x000000002b02c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003b5eae4 method=java.util.concurrent.ConcurrentHashMap.addCount(JI)V @ 34
+Event: 7.531 Thread 0x000000002b030800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003b5eae4 method=java.util.concurrent.ConcurrentHashMap.addCount(JI)V @ 34
+Event: 7.531 Thread 0x000000002b02f000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003b5eae4 method=java.util.concurrent.ConcurrentHashMap.addCount(JI)V @ 34
+Event: 7.531 Thread 0x000000002b032000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003b5eae4 method=java.util.concurrent.ConcurrentHashMap.addCount(JI)V @ 34
+Event: 7.531 Thread 0x000000002ba5f800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003b5eae4 method=java.util.concurrent.ConcurrentHashMap.addCount(JI)V @ 34
+Event: 7.531 Thread 0x000000002b027000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000004684e94 method=java.util.concurrent.ConcurrentHashMap.addCount(JI)V @ 7
+Event: 15.863 Thread 0x0000000033798000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000365ad84 method=java.io.ObjectStreamClass$FieldReflector.setPrimFieldValues(Ljava/lang/Object;[B)V @ 36
+Event: 15.863 Thread 0x0000000033798000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000004130310 method=java.io.ObjectInputStream.defaultReadFields(Ljava/lang/Object;Ljava/io/ObjectStreamClass;)V @ 159
+Event: 15.863 Thread 0x0000000033798000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000038ab2dc method=java.io.ObjectStreamClass$FieldReflector.setObjFieldValues(Ljava/lang/Object;[Ljava/lang/Object;)V @ 40
+Event: 36.792 Thread 0x000000002ba62000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000040be080 method=org.apache.kafka.common.metrics.stats.SampledStat$Sample.isComplete(JLorg/apache/kafka/common/metrics/MetricConfig;)Z @ 11
+
+Internal exceptions (10 events):
+Event: 5.825 Thread 0x000000002b438800 Exception <a 'java/lang/IncompatibleClassChangeError': Found class java.lang.Object, but interface was expected> (0x0000000721216f70) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\interpreter\linkResolver.cpp, ≥BëÓÁ\@
+Event: 5.841 Thread 0x000000002b434800 Implicit null exception at 0x0000000003e9a2d1 to 0x0000000003e9a67d
+Event: 6.007 Thread 0x0000000030e28000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$getAvailabilityProvider$0()Ljava/util/concurrent/CompletableFuture;> (0x0000000718f9cf98) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\interpDtæéÓ@
+Event: 6.007 Thread 0x0000000030e25000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$getAvailabilityProvider$0()Ljava/util/concurrent/CompletableFuture;> (0x0000000718d76620) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\interpı¡çÔ@
+Event: 6.007 Thread 0x000000002afa9000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$getAvailabilityProvider$0()Ljava/util/concurrent/CompletableFuture;> (0x0000000718ff8b38) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\interp7∫îÚ@
+Event: 6.007 Thread 0x000000002afa0000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$getAvailabilityProvider$0()Ljava/util/concurrent/CompletableFuture;> (0x0000000718dc2e38) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\interpäp8òÚ@
+Event: 6.007 Thread 0x000000002afac000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$getAvailabilityProvider$0()Ljava/util/concurrent/CompletableFuture;> (0x00000007183a7ff0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\interp
+Event: 6.007 Thread 0x000000002afaa800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$getAvailabilityProvider$0()Ljava/util/concurrent/CompletableFuture;> (0x0000000718724688) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\interpÎptïÓ@
+Event: 6.007 Thread 0x000000002afad000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$getAvailabilityProvider$0()Ljava/util/concurrent/CompletableFuture;> (0x000000071855b980) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\interp∆«ÇZ∑/@
+Event: 15.858 Thread 0x000000002ba69000 Exception <a 'java/lang/NoSuchMethodError': <clinit>> (0x0000000718d14da0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\prims\jni.cpp, line 1613]
+
+Events (10 events):
+Event: 38.586 Executing VM operation: RevokeBias done
+Event: 38.586 Thread 0x0000000032dfb000 Thread exited: 0x0000000032dfb000
+Event: 41.949 Executing VM operation: RevokeBias
+Event: 41.949 Executing VM operation: RevokeBias done
+Event: 41.949 Thread 0x000000002ba68000 Thread exited: 0x000000002ba68000
+Event: 45.649 Thread 0x000000002ba66000 Thread added: 0x000000002ba66000
+Event: 45.650 Thread 0x000000002ba69800 Thread added: 0x000000002ba69800
+Event: 47.888 Executing VM operation: RevokeBias
+Event: 47.888 Executing VM operation: RevokeBias done
+Event: 47.888 Thread 0x0000000032af2000 Thread exited: 0x0000000032af2000
+
+
+Dynamic libraries:
+0x00007ff744160000 - 0x00007ff744197000 	C:\Program Files\Java\jdk1.8.0_91\bin\java.exe
+0x00007ffcede70000 - 0x00007ffcee087000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffcec760000 - 0x00007ffcec824000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffceb170000 - 0x00007ffceb529000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffcec2f0000 - 0x00007ffcec3a2000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffcebdf0000 - 0x00007ffcebe97000 	C:\Windows\System32\msvcrt.dll
+0x00007ffcec5d0000 - 0x00007ffcec677000 	C:\Windows\System32\sechost.dll
+0x00007ffceb8d0000 - 0x00007ffceb8f8000 	C:\Windows\System32\bcrypt.dll
+0x00007ffcedd10000 - 0x00007ffcede24000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffcedb60000 - 0x00007ffcedd0e000 	C:\Windows\System32\USER32.dll
+0x00007ffceb650000 - 0x00007ffceb676000 	C:\Windows\System32\win32u.dll
+0x00007ffced320000 - 0x00007ffced349000 	C:\Windows\System32\GDI32.dll
+0x00007ffceb900000 - 0x00007ffceba1b000 	C:\Windows\System32\gdi32full.dll
+0x00007ffceb680000 - 0x00007ffceb71a000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffceb530000 - 0x00007ffceb641000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffcd4df0000 - 0x00007ffcd5082000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.4391_none_2715d37f73803e96\COMCTL32.dll
+0x00007ffcedb20000 - 0x00007ffcedb51000 	C:\Windows\System32\IMM32.DLL
+0x00000000685f0000 - 0x00000000686c2000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\msvcr100.dll
+0x0000000067d50000 - 0x00000000685e3000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\server\jvm.dll
+0x00007ffcebb90000 - 0x00007ffcebb98000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffce5a40000 - 0x00007ffce5a49000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffce2de0000 - 0x00007ffce2dea000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffce5700000 - 0x00007ffce5734000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffcebd60000 - 0x00007ffcebdd1000 	C:\Windows\System32\ws2_32.DLL
+0x0000000067d40000 - 0x0000000067d4f000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\verify.dll
+0x0000000067d10000 - 0x0000000067d39000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\java.dll
+0x0000000067c40000 - 0x0000000067c63000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\instrument.dll
+0x0000000067cf0000 - 0x0000000067d06000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\zip.dll
+0x00007ffcec9a0000 - 0x00007ffced216000 	C:\Windows\System32\SHELL32.dll
+0x00007ffce90c0000 - 0x00007ffce99c3000 	C:\Windows\SYSTEM32\windows.storage.dll
+0x00007ffcebf60000 - 0x00007ffcec2ef000 	C:\Windows\System32\combase.dll
+0x00007ffce8f80000 - 0x00007ffce90bf000 	C:\Windows\SYSTEM32\wintypes.dll
+0x00007ffced220000 - 0x00007ffced319000 	C:\Windows\System32\SHCORE.dll
+0x00007ffcebea0000 - 0x00007ffcebefe000 	C:\Windows\System32\shlwapi.dll
+0x00007ffceb0a0000 - 0x00007ffceb0cb000 	C:\Windows\SYSTEM32\profapi.dll
+0x00007ffce5980000 - 0x00007ffce599a000 	F:\idea\IntelliJ IDEA 2022.2\bin\breakgen64.dll
+0x0000000067cd0000 - 0x0000000067cea000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\net.dll
+0x00007ffcea720000 - 0x00007ffcea789000 	C:\Windows\system32\mswsock.dll
+0x0000000067cb0000 - 0x0000000067cc1000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\nio.dll
+0x00007ffcea980000 - 0x00007ffcea99b000 	C:\Windows\SYSTEM32\CRYPTSP.dll
+0x00007ffcea200000 - 0x00007ffcea235000 	C:\Windows\system32\rsaenh.dll
+0x00007ffcea810000 - 0x00007ffcea838000 	C:\Windows\SYSTEM32\USERENV.dll
+0x00007ffceb790000 - 0x00007ffceb80b000 	C:\Windows\System32\bcryptprimitives.dll
+0x00007ffcea970000 - 0x00007ffcea97c000 	C:\Windows\SYSTEM32\CRYPTBASE.dll
+0x00007ffce9ca0000 - 0x00007ffce9ccd000 	C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x00007ffcec830000 - 0x00007ffcec839000 	C:\Windows\System32\NSI.dll
+0x00007ffce3f80000 - 0x00007ffce3f99000 	C:\Windows\SYSTEM32\dhcpcsvc6.DLL
+0x00007ffce3b70000 - 0x00007ffce3b8f000 	C:\Windows\SYSTEM32\dhcpcsvc.DLL
+0x00007ffce9d10000 - 0x00007ffce9e12000 	C:\Windows\SYSTEM32\DNSAPI.dll
+0x0000000067ca0000 - 0x0000000067cad000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\management.dll
+0x00007ffcbfd10000 - 0x00007ffcbfd27000 	C:\Windows\system32\napinsp.dll
+0x00007ffcbec20000 - 0x00007ffcbec3b000 	C:\Windows\system32\pnrpnsp.dll
+0x00007ffcbe9d0000 - 0x00007ffcbe9e1000 	C:\Windows\System32\winrnr.dll
+0x00007ffce5a80000 - 0x00007ffce5a95000 	C:\Windows\system32\wshbth.dll
+0x00007ffcbfe50000 - 0x00007ffcbfe77000 	C:\Windows\system32\nlansp_c.dll
+0x0000000069aa0000 - 0x0000000069ac6000 	C:\Program Files\Bonjour\mdnsNSP.dll
+0x00007ffce2280000 - 0x00007ffce228a000 	C:\Windows\System32\rasadhlp.dll
+0x00007ffce2e10000 - 0x00007ffce2e93000 	C:\Windows\System32\fwpuclnt.dll
+
+VM Arguments:
+jvm_args: -javaagent:F:\idea\IntelliJ IDEA 2022.2\lib\idea_rt.jar=54828:F:\idea\IntelliJ IDEA 2022.2\bin -Dfile.encoding=UTF-8 
+java_command: com.retailersv1.RealtimeDwdInteractionCommentInfo
+java_class_path (initial): C:\Program Files\Java\jdk1.8.0_91\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\rt.jar;F:\daima\realtime_dev\stream-realtime\target\classes;F:\daima\realtime_dev\stream-common\target\classes;E:\meaven\apache-maven-3.8.3\apache-maven-3.8.3\repository\com\squareup\okhttp3\okhttp\3.8.1\okhttp-3.8.1.jar;E:\meaven\apache-maven-3.8.3\apache-maven-3.8.3\repository\com\squareup\okio\okio\1.13.0\okio-1.13.0.jar;E:\meaven\apache-maven-3.8.3\apache-maven-3.8.3\repository\org\apache\commons\commons-lang3\3.10\commons-lang3-3.10.jar;E:\meaven\apache-maven-3.8.3\apache-maven-3.8.3\repository\com\google\guava\guava\30.0-android\guava-30.0-android.jar;E:\meaven\apache-maven-3.8.3\apache-maven-3.8.3\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_91
+PATH=E:\–¬Ω®Œƒº˛º–\bin\;C:\P;ogramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Java\jdk1.8.0_91\bin;C:\Program Files\Java\jdk1.8.0_91;D:\mysql\mysql-8.0.35-winx64\mysql-8.0.35-winx64\bin;E:\meaven\apache-maven-3.8.3\apache-maven-3.8.3\bin;F:\zhuangaoyi\peizhi\hadoop-3.2.0\bin;F:\zhuangaoyi\peizhi\hadoop-3.2.0\sbin;C:\Program Files\Bandizip\;C:\Program Files\Git\cmd;E:\meaven\apache-maven-3.8.3\apache-maven-3.8.3\bin;C:\Users\s\AppData\Local\Programs\Python\Launcher\;C:\Users\s\AppData\Local\Microsoft\WindowsApps;E:\LenovoSoftstore\Install\QQliuxidating\QQGameTempest\Hall.57808\;F:\pycharm\PyCharm Community Edition 2024.2.1\bin;;F:\Pycharmm\PyCharm 2024.1.6\bin;;F:\idea\IntelliJ IDEA 2022.2\bin;
+USERNAME=s
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 154 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 22621 (10.0.22621.4391)
+
+CPU:total 20 (10 cores per cpu, 2 threads per core) family 6 model 154 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 33272312k(154644k free), swap 55886708k(15972k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.91-b14) for windows-amd64 JRE (1.8.0_91-b14), built on Apr  1 2016 00:58:32 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Fri Dec 27 19:40:21 2024
+elapsed time: 51 seconds (0d 0h 0m 51s)
+

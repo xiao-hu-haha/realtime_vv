@@ -1,0 +1,52 @@
+# MySQL
+mysql.host=cdh03
+mysql.port=3306
+mysql.url=jdbc:mysql://cdh03:3306?useSSL=false
+mysql.timezone=
+mysql.database=gmall
+mysql.databases.conf=gmall_config
+mysql.user=root
+mysql.pwd=root
+
+holo.endpoint=
+holo.database=
+ali.key=
+ali.pwd=
+
+# kafka cdh
+kafka.bootstrap.servers=cdh01:9092,cdh02:9092,cdh03:9092
+REALTIME.KAFKA.LOG.TOPIC=topic_log
+
+kafka.topic.db=topic_db
+kafka.dirty.topic=kafka_dirty
+kafka.err.log=kafka_err
+kafka.start.log=kafka_start
+kafka.display.log=kafka_display
+kafka.action.log=kafka_action
+kafka.page.topic=kafka_page
+
+# Push Message
+push.feishu.url=
+
+# file log
+REALTIME.LOG.FILE.PATH=
+REALTIME.MSG.POSITION.FILE.PATH=
+
+# Zookeeper Server
+zookeeper.server.host.list=cdh01:2181,cdh02:2181,cdh03:2181
+
+# Hbase
+hbase.namespace=gmall_env
+#kafka sink
+kafka_sink_bootServerList=cdh01:9092,cdh02:9092,cdh03:9092
+#
+kafka_sink_topic_db=topic_db
+# kakfa source
+kafka_db_data=topic_db
+kafka_source_servers=cdh01:9092,cdh02:9092,cdh03:9092
+#  yarn
+flink.submit.user=root
+#  conf
+flink.conf.configurationDirectory=hdfs://cdh01:8020/flinks/conf
+#  lib
+flink.cluster.libs=hdfs://cdh01:8020/flinks/lib

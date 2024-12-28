@@ -1,0 +1,69 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1555696 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:390), pid=70516, tid=68244
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_91-b14) (build 1.8.0_91-b14)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.91-b14 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000002b47c000):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=68244, stack(0x000000002c470000,0x000000002c570000)]
+
+Stack: [0x000000002c470000,0x000000002c570000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C2:   4889 3978       4       java.io.ObjectInputStream::readClassDesc (128 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000003667a000 JavaThread "Co-Process-Broadcast (2/20)#0" [_thread_blocked, id=69792, stack(0x0000000043f20000,0x0000000044020000)]
+  0x0000000036679800 JavaThread "Co-Process-Broadcast (1/20)#0" [_thread_in_native, id=53156, stack(0x0000000043e20000,0x0000000043f20000)]
+  0x000000003667b000 JavaThread "OutputFlusher for Source: read_kafka_db (20/20)#0" daemon [_thread_blocked, id=69420, stack(0x0000000042b50000,0x0000000042c50000)]
+  0x0000000036678800 JavaThread "OutputFlusher for Source: read_kafka_db (19/20)#0" daemon [_thread_blocked, id=67456, stack(0x0000000042a50000,0x0000000042b50000)]
+  0x0000000036678000 JavaThread "Source: read_kafka_db (20/20)#0" [_thread_blocked, id=68824, stack(0x0000000042750000,0x0000000042850000)]
+  0x000000003667c800 JavaThread "OutputFlusher for Source: read_kafka_db (18/20)#0" daemon [_thread_blocked, id=67844, stack(0x0000000042650000,0x0000000042750000)]
+  0x0000000036670000 JavaThread "Source: read_kafka_db (19/20)#0" [_thread_blocked, id=68828, stack(0x0000000042550000,0x0000000042650000)]
+  0x0000000036671000 JavaThread "Source: read_kafka_db (18/20)#0" [_thread_blocked, id=68852, stack(0x0000000042450000,0x0000000042550000)]
+  0x0000000036676800 JavaThread "OutputFlusher for Source: read_kafka_db (17/20)#0" daemon [_thread_blocked, id=69800, stack(0x0000000042350000,0x0000000042450000)]
+  0x0000000036675800 JavaThread "OutputFlusher for Source: read_kafka_db (15/20)#0" daemon [_thread_blocked, id=66764, stack(0x0000000042250000,0x0000000042350000)]
+  0x0000000036677000 JavaThread "Source: read_kafka_db (17/20)#0" [_thread_blocked, id=68912, stack(0x0000000042150000,0x0000000042250000)]
+  0x0000000036675000 JavaThread "Source: read_kafka_db (15/20)#0" [_thread_blocked, id=70116, stack(0x0000000042050000,0x0000000042150000)]
+  0x000000003666d000 JavaThread "OutputFlusher for Source: read_kafka_db (16/20)#0" daemon [_thread_blocked, id=69564, stack(0x0000000041f50000,0x0000000042050000)]
+  0x0000000036674000 JavaThread "OutputFlusher for Source: read_kafka_db (14/20)#0" daemon [_thread_blocked, id=69264, stack(0x0000000041e50000,0x0000000041f50000)]
+  0x0000000036671800 JavaThread "Source: read_kafka_db (16/20)#0" [_thread_blocked, id=67804, stack(0x0000000041d50000,0x0000000041e50000)]
+  0x000000003666f800 JavaThread "Source: read_kafka_db (14/20)#0" [_thread_blocked, id=55416, stack(0x0000000041c50000,0x0000000041d50000)]
+  0x000000003666e800 JavaThread "OutputFlusher for Source: read_kafka_db (13/20)#0" daemon [_thread_blocked, id=40124, stack(0x0000000041b50000,0x0000000041c50000)]
+  0x000000003666e000 JavaThread "Source: read_kafka_db (13/20)#0" [_thread_blocked, id=68276, stack(0x0000000041a50000,0x0000000041b50000)]
+  0x0000000036673000 JavaThread "OutputFlusher for Source: read_kafka_db (12/20)#0" daemon [_thread_blocked, id=48704, stack(0x0000000041950000,0x0000000041a50000)]
+  0x0000000036672800 JavaThread "OutputFlusher for Source: mysql_cdc_dim_source -> convert_json_process -> (Sink: Print to Std. Out, clean_json_column_map) (3/20)#0" daemon [_thread_blocked, id=69908, stack(0x0000000041850000,0x0000000041950000)]
+  0x000000003630e800 JavaThread "OutputFlusher for Source: read_kafka_db (11/20)#0" daemon [_thread_blocked, id=69680, stack(0x0000000041750000,0x0000000041850000)]
+  0x000000003630e000 JavaThread "OutputFlusher for Source: mysql_cdc_dim_source -> convert_json_process -> (Sink: Print to Std. Out, clean_json_column_map) (18/20)#0" daemon [_thread_blocked, id=66396, stack(0x0000000041650000,0x0000000041750000)]
+  0x000000003630c800 JavaThread "OutputFlusher for Source: read_kafka_db (5/20)#0" daemon [_thread_blocked, id=69804, stack(0x0000000041550000,0x0000000041650000)]
+  0x000000003630d000 JavaThread "OutputFlusher for Source: read_kafka_db (3/20)#0" daemon [_thread_blocked, id=35032, stack(0x0000000041450000,0x0000000041550000)]
+  0x000000003630f800 JavaThread "OutputFlusher for Source: mysql_cdc_dim_source -> convert_json_process -> (Sink: Print to Std. Out, clean_json_column_map) (15/20)#0" daemon [_thread_blocked, id=34580, stack(0x0000000041350000,0x0000000041450000)]
+  0x0000000036312800 JavaThread "OutputFlusher for Source: mysql_cdc_dim_source -> convert_json_process -> (Sink: Print to Std. Out, clean_json_column_map) (19/20)#0" daemon [_thread_blocked, id=64528, stack(0x0000000041250000,0x0000000041350000)]
+  0x0000000036311800 JavaThread "OutputFlusher for Source: mysql_cdc_dim_source -> convert_json_process -> (Sink: Print to Std. Out, clean_json_column_map) (4/20)#0" daemon [_thread_blocked, id=70508, stack(0x0000000041150000,0x0000000041250000)]
+  0x0000000036311000 JavaThread "OutputFlusher for Source: read_kafka_db (1/20)#0" daemon [_thread_blocked, id=70452, stack(0x0000000041050000,0x0000000041150000)]

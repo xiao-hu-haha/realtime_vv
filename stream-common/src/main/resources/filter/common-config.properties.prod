@@ -50,3 +50,7 @@ flink.submit.user=root
 flink.conf.configurationDirectory=hdfs://cdh01:8020/flinks/conf
 #  lib
 flink.cluster.libs=hdfs://cdh01:8020/flinks/lib
+#kafka
+topic_topic_comment_info=topic_comment_info
+#hive-dir
+hive.conf.dir=F://daima/realtime_dev/stream-realtime/src/main/resources
